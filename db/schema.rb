@@ -13,12 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140727193957) do
 
-<<<<<<< HEAD
-=======
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
->>>>>>> c0abeed58a9e9cf52316df64cb3b11042bf210b3
   create_table "student_prefs", force: true do |t|
     t.integer "user_id"
     t.date    "start_date"
@@ -26,32 +23,19 @@ ActiveRecord::Schema.define(version: 20140727193957) do
     t.integer "hrs_needed"
     t.integer "max_travel_distance"
     t.boolean "does_gender_matter"
-<<<<<<< HEAD
-    t.integer "creds_pursuing"
-    t.boolean "want_addiction_cert_super"
-    t.boolean "want_play_cert_super"
-    t.integer "most_important_factors"
-=======
     t.integer "creds_pursuing",            array: true
     t.boolean "want_addiction_cert_super"
     t.boolean "want_play_cert_super"
     t.integer "most_important_factors",    array: true
->>>>>>> c0abeed58a9e9cf52316df64cb3b11042bf210b3
   end
 
   create_table "supervisor_prefs", force: true do |t|
     t.integer "license_num"
     t.integer "years_of_supervision"
     t.integer "how_manu_students_want"
-<<<<<<< HEAD
-    t.integer "most_important_factors"
-    t.integer "clinical_settings"
-    t.integer "how_advertise"
-=======
     t.integer "most_important_factors", array: true
     t.integer "clinical_settings",      array: true
     t.integer "how_advertise",          array: true
->>>>>>> c0abeed58a9e9cf52316df64cb3b11042bf210b3
   end
 
   create_table "users", force: true do |t|

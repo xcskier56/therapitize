@@ -12,4 +12,15 @@ class UsersController < ApplicationController
     end
   end
 
+#Friendly_ID Update
+  class UserController < ApplicationController
+  def index
+    @posts = User.all
+  end
+
+  def show
+    @post = User.find(params[:id])
+  end
+end
+
 end
