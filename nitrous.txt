@@ -26,4 +26,3 @@ For more information, see the article 'Ruby on Rails with Nitrous.io':
 http://railsapps.github.io/rubyonrails-nitrous-io.html
 
 ________________________
-
