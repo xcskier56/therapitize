@@ -35,9 +35,7 @@
 #  prefs_id               :integer
 #
 
-class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+class Student < User
+  has_one :prefs, class_name: :StudentPrefs
+
 end
