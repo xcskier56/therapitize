@@ -80,6 +80,17 @@ Rails.application.configure do
     user_name: Rails.application.secrets.email_provider_username,
     password: Rails.application.secrets.email_provider_password
   }
+
+  # AWS S3 profile attachment storage: config/environments/production.rb
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'therapitize',
+      :access_key_id => 'AKIAJKOBDW4D6HKXHTCQ',
+      :secret_access_key => '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'
+    }
+  }
+
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => Rails.application.secrets.domain_name }
   config.action_mailer.delivery_method = :smtp
@@ -96,3 +107,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+
+
