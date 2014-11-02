@@ -33,6 +33,7 @@
 #  dollars_per_hr         :integer
 #  how_hear_about_us      :string(255)
 #  prefs_id               :integer
+#  type                   :string(255)
 #
 
 class Supervisor < User

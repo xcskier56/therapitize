@@ -1,0 +1,10 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.hidden_field :type, value: "student" %>
+    <%= f.text_field :first_name, placeholder: "First Name", :autocomplete => :off %>
+    <%= f.text_field :last_name, placeholder: "Last Name", :autocomplete => :off %>
+    <%= f.text_field :email, placeholder: "Email", :autocomplete => :off, :id => "user_form_email" %>
+    <%= f.password_field :password, placeholder: "Password", :autocomplete => :off, :id => "user_form_pass" %>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password", :autocomplete => :off %>
+    <p class="disclaimer">By signing up, you agree with our <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a></p>
+    <%= f.submit "CREATE ACCOUNT!", class: "button  color btn-lg", id: "create-account-button" %>
+<% end %>

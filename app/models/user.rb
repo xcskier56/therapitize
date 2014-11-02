@@ -33,6 +33,7 @@
 #  dollars_per_hr         :integer
 #  how_hear_about_us      :string(255)
 #  prefs_id               :integer
+#  type                   :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -40,4 +41,5 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
 end

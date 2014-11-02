@@ -1,0 +1,10 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <%= f.email_field :email, autofocus: true %>
+
+  <%= f.password_field :password, autocomplete: "off" %>
+
+  <%= f.submit "Log me in", class: "btn btn-primary btn-block btn-large" %>
+<% end %>
+
+<%= render "devise/shared/links" %>

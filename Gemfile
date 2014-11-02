@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.1.2'
   gem 'rails', '4.1.4'
   gem 'pg'
-  gem 'sass-rails', '~> 4.0.3'
   gem 'uglifier', '>= 1.3.0'
   gem 'coffee-rails', '~> 4.0.0'
   gem 'jquery-rails'
@@ -10,7 +9,6 @@ ruby '2.1.2'
   gem 'jbuilder', '~> 2.0'
   gem 'sdoc', '~> 0.4.0',          group: :doc
   gem 'spring',        group: :development
-  gem 'bootstrap-sass'
   gem 'devise'
   gem 'geocoder'
   gem 'cocaine'
@@ -36,4 +34,8 @@ group :test do
   gem 'faker'
   gem 'launchy'
   gem 'selenium-webdriver'
+end
+
+group :assets do
+  gem 'sass', '~> 3.3.11'
 end
