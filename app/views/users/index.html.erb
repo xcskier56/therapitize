@@ -6,7 +6,7 @@
         <tbody>
           <% @users.each do |user| %>
             <tr>
-              <%= render user %>
+              <%= render partial: 'users/user', locals: {user: user} %>
             </tr>
           <% end %>
         </tbody>

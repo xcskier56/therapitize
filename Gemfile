@@ -15,16 +15,19 @@ ruby '2.1.2'
   gem 'paperclip'
   gem 'aws-sdk'
   gem 'friendly_id'
-  
+  gem 'haml'
+
 group :development do
   gem 'sqlite3'
-  gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'annotate', '~> 2.6.5'
 end
 group :development, :test do
+  # I'm using this branch of jazz_hands b/c the master branch points to an old ruby debugger.
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'pry-byebug', '~> 1.3.2' # behind latest version b/c jazz_hands needs pry 0.9 and this is the only way to have them not conflict.
   gem 'factory_girl_rails'
   gem 'rspec-rails'
 end

@@ -47,14 +47,14 @@ function fullScreenContainer() {
 
     var screenWidth = $(window).width() + "px";
     var screenHeight = $(window).height() + "px";
-      
+
     // Set Slides to new Screen Dimensions
-    
+
     $("#intro, #intro .item, #intro-video, #intro-video .item").css({
       width: screenWidth,
       height: screenHeight
-    }); 
-      
+    });
+
   });
 
 }
@@ -68,8 +68,8 @@ function owlCarousel() {
       lazyLoad : true,
       items: 3,
       theme: "owl-theme-main"
-    }); 
-  
+    });
+
     $("#intro").owlCarousel({
       lazyLoad: true,
       lazyEffect: "fade",
@@ -80,8 +80,8 @@ function owlCarousel() {
       pagination: false,
       transitionStyle: "fade",
       theme: "owl-theme-featured"
-      
-    }); 
+
+    });
 }
 
 
@@ -89,7 +89,7 @@ function owlCarousel() {
 /* --- Tooltips ------------------- */
 
 function tooltips() {
-  $('.tooltips').tooltip(); 
+  $('.tooltips').tooltip();
 }
 
 
@@ -110,7 +110,7 @@ function toggleContactForm() {
 /* --- scrollReveal ------------------- */
 
 window.scrollReveal = new scrollReveal();
-  
+
 
 
 /* --- magnific popup ------------------- */
@@ -155,7 +155,7 @@ function magnificPopup() {
       enabled: true, // By default it's false, so don't forget to enable it
 
       duration: 300, // duration of the effect, in milliseconds
-      easing: 'ease-in-out', // CSS transition easing function 
+      easing: 'ease-in-out', // CSS transition easing function
 
       // The "opener" function should return the element from which popup will be zoomed in
       // and to which popup will be scaled down
@@ -179,7 +179,7 @@ function magnificPopup() {
 
 		closeBtnInside: true,
 		preloader: false,
-		
+
 		midClick: true,
 		removalDelay: 300,
 		mainClass: 'my-mfp-slide-bottom'
@@ -231,7 +231,7 @@ function scrollAnchor() {
       }
     }
   });
-  
+
 }
 
 
@@ -398,7 +398,7 @@ function onePageScroll() {
       scrollSpeed: 650,
       scrollOffset: 30,
       scrollThreshold: 0.5,
-      filter: ':not(.login, .signup)',
+      filter: ':not(.login, .signup, .external)',
       easing: 'swing',
       begin: function() {
           //I get fired when the animation is starting
@@ -427,7 +427,7 @@ $(window).scroll(function() {
 //Placeholder fixed for Internet Explorer
 $(function() {
 	var input = document.createElement("input");
-	if(('placeholder' in input)==false) { 
+	if(('placeholder' in input)==false) {
 		$('[placeholder]').focus(function() {
 			var i = $(this);
 			if(i.val() == i.attr('placeholder')) {
@@ -435,10 +435,10 @@ $(function() {
 				if(i.hasClass('password')) {
 					i.removeClass('password');
 					this.type='password';
-				}			
+				}
 			}
 		}).blur(function() {
-			var i = $(this);	
+			var i = $(this);
 			if(i.val() == '' || i.val() == i.attr('placeholder')) {
 				if(this.type=='password') {
 					i.addClass('password');
@@ -460,7 +460,7 @@ $(function() {
 
 // /*
 //   Jquery Validation using jqBootstrapValidation
-//    example is taken from jqBootstrapValidation docs 
+//    example is taken from jqBootstrapValidation docs
 //   */
 // $(function() {
 
@@ -474,21 +474,21 @@ $(function() {
 //      submitSuccess: function($form, event) {
 //       event.preventDefault(); // prevent default submit behaviour
 //        // get values from FORM
-//        var first_name = $("input#first_name").val();  
-//        var last_name = $("input#last_name").val();  
-//        var email = $("input#email").val(); 
+//        var first_name = $("input#first_name").val();
+//        var last_name = $("input#last_name").val();
+//        var email = $("input#email").val();
 //        var message = $("textarea#message").val();
 //     //     var firstName = name; // For Success/Failure Message
 //     //        // Check for white space in name for Success/Fail message
 //     //     if (firstName.indexOf(' ') >= 0) {
 // 	   // firstName = name.split(' ').slice(0, -1).join(' ');
-//     //      }        
+//     //      }
 // 	 $.ajax({
 //                 url: "contact_me.php",
 //             	type: "POST",
 //             	data: {first_name: first_name, last_name: last_name, email: email, message: message},
 //             	cache: false,
-//             	success: function() {  
+//             	success: function() {
 //             	// Success message
 //             	   $('#success').html("<div class='alert alert-success'>");
 //             	   $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -497,11 +497,11 @@ $(function() {
 //             		.append("<strong>Your message has been sent. </strong>");
 //  		  $('#success > .alert-success')
 //  			.append('</div>');
- 						    
+
 //  		  //clear all fields
 //  		  $('#contactForm').trigger("reset");
 //  	      },
-//  	   error: function() {		
+//  	   error: function() {
 //  		// Fail message
 //  		 $('#success').html("<div class='alert alert-danger'>");
 //             	$('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -523,9 +523,9 @@ $(function() {
 //                     $(this).tab("show");
 //         });
 //   });
- 
 
-/*When clicking on Full hide fail/success boxes */ 
+
+/*When clicking on Full hide fail/success boxes */
 $('#name').focus(function() {
      $('#success').html('');
   });
