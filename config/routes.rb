@@ -13,10 +13,4 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
 
-  devise_for :students
-  resources :students
-
-  devise_for :supervisors
-  resources :supervisors
-
 end

@@ -1,0 +1,9 @@
+.container
+  .row
+    %h3 User:
+    %p
+      name:
+      =@user.name if @user.name
+    %p
+      email:
+      = @user.email if @user.email

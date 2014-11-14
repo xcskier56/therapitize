@@ -2,7 +2,7 @@
   .container
     %br
     %br
-    = form_for edit_user_path(@user) do |f|
+    = form_for @user do |f|
       = f.label :zip_code
       = f.text_field :zip
 
@@ -11,5 +11,4 @@
       = f.text_field :street_address
 
       %br
-      = f.label :street_address
-      = f.text_field :street_address
+      = f.submit "Update"
