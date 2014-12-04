@@ -16,7 +16,11 @@ ruby '2.1.2'
   gem 'aws-sdk'
   gem 'friendly_id'
   gem 'haml'
-
+  
+# Enable Heroku
+group :production do
+  gem 'rails_12factor'
+end
 group :development do
   gem 'sqlite3'
   gem 'binding_of_caller', :platforms=>[:mri_21]
