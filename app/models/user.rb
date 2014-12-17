@@ -49,4 +49,8 @@ class User < ActiveRecord::Base
     "#{street_address}, #{zip}"
   end
 
+  def name
+    "#{first_name} #{last_name}"
+  end
+
 end

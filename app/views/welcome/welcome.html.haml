@@ -1,0 +1,64 @@
+.container
+  %center
+    %h1 
+      Welcome
+      = @user.name
+      !
+  %h4 We use these questions to help match you the best we can
+  %hr
+  = form_for @user, html: {role: "form", class: "form-horizontal"}, remote: true do |f|
+    .row
+      .col-md-5
+        .form-group
+          = f.label :phone, class: "col-md-4 control-label"
+          .col-md-7
+            = f.text_field :phone, placeholder: "123-555-5555", class: "form-control"
+        .form-group
+          = f.label :address, class: "col-md-4 control-label"
+          .col-md-7
+            = f.text_field :address, placeholder: "Address", class: "form-control"
+        .form-group
+          = f.label :zip, class: "col-md-4 control-label"
+          .col-md-7
+            = f.text_field :zip, placeholder: "Zip Code", class: "form-control"
+        .form-group
+          = f.label :gender, "What is your gender?", class: "col-md-4 control-label"
+          .col-md-7
+            .button-group{data: {toggle: "buttons"}}
+              %label.btn.btn-primary
+                = f.radio_button :gender, "Male"
+                Male
+              %label.btn.btn-primary
+                = f.radio_button :gender, "Female"
+                Female
+              %label.btn.btn-primary
+                = f.radio_button :gender, "No Response"
+                No Response
+      .col-md-7
+        .form-group
+          = f.label :who_for_coffee, "Which theorist would you most like to invite out for coffee?", class: "col-md-5 control-label"
+          .col-md-7
+            .button-group.vertical-buttons{data: {toggle: "buttons"}}
+              %label.btn.btn-primary
+                = f.radio_button :who_for_coffee, "Sigmund Freud"
+                Sigmund Freud
+              %label.btn.btn-primary
+                = f.radio_button :who_for_coffee, "Virginia Satir"
+                Virginia Satir
+              %label.btn.btn-primary
+                = f.radio_button :who_for_coffee, "Rollo May"
+                Rollo May
+              %label.btn.btn-primary
+                = f.radio_button :who_for_coffee, "Ester Perel"
+                Ester Perel
+              %label.btn.btn-primary
+                = f.radio_button :who_for_coffee, "Carl Rogers"
+                Carl Rogers
+              %label.btn.btn-primary
+                = f.radio_button :who_for_coffee, "Other"
+                Other
+        .form-group
+          = f.label :who_for_coffee, "What do you think are the 2 most important factors in choosing a supervisor?", class: "col-md-5 control-label"
+          .col-md-7
+            = f.select :
+          

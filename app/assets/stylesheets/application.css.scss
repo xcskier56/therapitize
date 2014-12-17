@@ -13,3 +13,9 @@
  *= require_self
  *= require_tree ./application
  */
+
+.vertical-buttons {
+  label {
+    margin-bottom: 8px;
+  }
+}

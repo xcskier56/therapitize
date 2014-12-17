@@ -421,7 +421,7 @@
         <p class="login-overlay">
           Sign up for Therapitize -- Student
         </p>
-        <%= render partial: 'devise/registrations/new_student' %>
+        <%= render partial: 'devise/registrations/new', locals: {role: "student"} %>
        </section>
       
     </div>
@@ -432,7 +432,7 @@
         <p class="login-overlay">
           Sign up for Therapitize -- Supervisor
         </p>
-
+        <%= render partial: 'devise/registrations/new', locals: {role: "supervisor"} %>
        </section>
       
     </div>

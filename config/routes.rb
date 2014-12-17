@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
+
+  match '/welcome',   to: 'welcome#welcome', via: :get
+  match '/welcome2',  to: 'welcome#welcome2', via: :get
+  match '/welcome3',  to: 'welcome#welcome3', via: :get
 
 end
