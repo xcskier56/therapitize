@@ -15,25 +15,17 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
-#  name                   :string(255)
 #  first_name             :string(255)
 #  last_name              :string(255)
-#  phone                  :string(12)
-#  change_theory          :text
+#  phone                  :string(10)
 #  address                :string(255)
 #  zip                    :integer
 #  gender                 :string(255)
 #  admin                  :boolean
-#  addiction_certified    :boolean
-#  play_certified         :boolean
-#  who_for_coffee         :text
-#  education              :text
-#  remote_supervision     :boolean
-#  group_supervision      :boolean
-#  dollars_per_hr         :integer
-#  how_hear_about_us      :string(255)
-#  prefs_id               :integer
-#  type                   :string(255)
+#  street_address         :string(255)
+#  latitude               :float
+#  longitude              :float
+#  user_type              :string(255)
 #
 
 FactoryGirl.define do

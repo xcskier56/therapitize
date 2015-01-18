@@ -34,6 +34,7 @@ group :development, :test do
   gem 'pry-byebug', '~> 1.3.2' # behind latest version b/c jazz_hands needs pry 0.9 and this is the only way to have them not conflict.
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'better_errors'
 end
 group :test do
   gem 'capybara'

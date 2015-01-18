@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
+  resources :student_preferences
+  resources :supervisor_preferences
 
   match '/welcome',   to: 'welcome#welcome', via: :get
   match '/welcome2',  to: 'welcome#welcome2', via: :get
