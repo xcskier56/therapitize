@@ -1,9 +1,14 @@
 .container
   .row
-    %h3 User:
-    %p
-      name:
-      =@user.name if @user.name
-    %p
-      email:
-      = @user.email if @user.email
+    %h3
+      Hi
+      = "#{@user.name}, here are the best #{@user.user_type == 'Student' ? 'supervisors' : 'students'} for you:"
+  .row
+    .col-sm-12
+      %table
+        %th Rating for you (currently random)
+        %th Name
+        - if @user.user_type == "Student"
+          = render partial: 'users/supervisor', collection: @supers, as: :supervisor
+        - else
+          = render partial: 'users/student', collection: @students

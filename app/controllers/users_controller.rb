@@ -11,6 +11,11 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    if @user.user_type == 'Student'
+      @supers = User.where("user_type = ?", 'Supervisor')
+    else
+      @students = User.where("user_type = ?", 'Student')
+    end
   end
 
   def edit
