@@ -1,14 +1,33 @@
-%section.content.text-left.light
-  .container
-    %br
-    %br
-    = form_for @user do |f|
-      = f.label :zip_code
-      = f.text_field :zip
-
-      %br
-      = f.label :street_address
-      = f.text_field :street_address
-
-      %br
-      = f.submit "Update"
+.container
+  .row
+    .col-sm-12
+      %div{role: 'tabpanel'}
+        %ul.nav.nav-tabs{role: 'tablist'}
+          %li.active{role: 'presentation'}
+            %a{href: '#my-account', role: 'tab', aria: {controls: 'my-account'}, data: {toggle: 'tab'}  } My Account
+          %li{role: 'presentation'}
+            %a{href: '#my-profile', role: 'tab', aria: {controls: 'my-profile'}, data: {toggle: 'tab'}  } My Profile
+        .tab-content
+          #my-account.tab-pane.active{role: 'tabpanel'}
+            .row
+              %br
+            = form_for @user, html: {class: 'form-horizontal'}, remote: true do |f|
+              = render partial: 'users/edit_account_fields', locals: {f: f, show_email: true}
+              .row
+                .col-sm-12
+                  = f.submit "Update", class: 'btn btn-lg btn-primary center-block'
+              .row
+                %br
+          #my-profile.tab-pane{role: 'tabpanel'}
+            .row
+              %br
+            = form_for @user.preferences, html: {class: 'form-horizontal'} do |f|
+              - if @user.user_type == "Student"
+                = render partial: 'users/student_prefs', locals: {user: @user, f: f}
+              - else
+                = render partial: 'users/super_prefs', locals: {user: @user, f: f}
+              .row
+                .col-sm-12
+                  = f.submit "Update", class: 'btn btn-lg btn-primary center-block'
+              .row
+                %br

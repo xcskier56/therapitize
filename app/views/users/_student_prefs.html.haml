@@ -1,0 +1,84 @@
+.row  
+  .col-sm-5
+    .form-group
+      = f.label :favorite_theorist, "Which theorist would you most like to invite out for coffee?"
+      .button-group.vertical-buttons{data: {toggle: "buttons"}}
+        %label.btn.btn-default{ class: "#{@user.preferences.favorite_theorist == "Sigmund Freud" ? 'active' : ''}"}
+          = f.radio_button :favorite_theorist, "Sigmund Freud"
+          Sigmund Freud
+        %label.btn.btn-default{ class: "#{@user.preferences.favorite_theorist == "Virginia Satir" ? 'active' : ''}"}
+          = f.radio_button :favorite_theorist, "Virginia Satir"
+          Virginia Satir
+        %label.btn.btn-default{ class: "#{@user.preferences.favorite_theorist == "Rollo May" ? 'active' : ''}"}
+          = f.radio_button :favorite_theorist, "Rollo May"
+          Rollo May
+        %label.btn.btn-default{ class: "#{@user.preferences.favorite_theorist == "Ester Perel" ? 'active' : ''}"}
+          = f.radio_button :favorite_theorist, "Ester Perel"
+          Ester Perel
+        %label.btn.btn-default{ class: "#{@user.preferences.favorite_theorist == "Carl Rogers" ? 'active' : ''}"}
+          = f.radio_button :favorite_theorist, "Carl Rogers"
+          Carl Rogers
+        %label.btn.btn-default{ class: "#{@user.preferences.favorite_theorist == "Other" ? 'active' : ''}"}
+          = f.radio_button :favorite_theorist, "Other"
+          Other
+  .col-sm-5.col-sm-offset-1
+    .form-group 
+      = label_tag :certificates, "Which of the following are you pursuing?"
+      .row
+        .col-sm-3.checkbox
+          = f.label :lsw do
+            = f.check_box :lsw
+            LSW
+        .col-sm-3.checkbox
+          = f.label :msw do
+            = f.check_box :msw
+            MSW
+        .col-sm-3.checkbox
+          = f.label :licsw do
+            = f.check_box :licsw
+            LICSW
+      .row
+        .col-sm-3.checkbox
+          = f.label :lmft do  
+            = f.check_box :lmft
+            LMFT
+        .col-sm-3.checkbox
+          = f.label :lpcc do
+            = f.check_box :lpcc
+            LPCC
+        .col-sm-3.checkbox
+          = f.label :lp do  
+            = f.check_box :lp
+            LP
+
+.row
+  .col-sm-5
+    .form-group
+      = f.label :hourly_rate, "What are you willing to pay for supervision?"
+      .input-group.col-sm-4
+        %span.input-group-addon $
+        = f.text_field :hourly_rate, class: "form-control"
+        %span.input-group-addon /hr
+  .col-sm-5.col-sm-offset-1
+    .form-group
+      = f.label :group_rate, "What are you willing to pay for GROUP supervision?"
+      .input-group.col-sm-4
+        %span.input-group-addon $
+        = f.text_field :group_rate, class: "form-control"
+        %span.input-group-addon /hr
+.row
+  .col-sm-3
+    .form-group
+      = f.label :start_date, "When are you planning to start supervision?"
+      = f.text_field :start_date, class: "form-control", id: 'student_start_date'
+  .col-sm-3.col-sm-offset-1
+    .form-group
+      = f.label :completion_date, "When do you expect to finish supervision?"
+      = f.text_field :completion_date, required: true, class: "form-control", id: 'student_end_date'
+  .col-sm-3.col-sm-offset-1
+    .form-group
+      = f.label :hrs_needed, "How many hours of supervision do you need?"
+      = f.text_field :hrs_needed, class: "form-control"
+
+
+

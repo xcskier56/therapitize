@@ -1,10 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   before_filter :configure_permitted_parameters
 
-  def create
-    binding.pry
-  end
-
   protected
 
     def configure_permitted_parameters

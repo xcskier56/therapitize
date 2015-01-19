@@ -1,0 +1,41 @@
+.row
+  .col-sm-6
+    .form-group
+      = f.label :first_name, class: 'col-sm-5 control-label'
+      .col-sm-5
+        = f.text_field :first_name, required: true,class: "form-control"
+    .form-group
+      = f.label :last_name, class: 'col-sm-5 control-label'
+      .col-sm-5
+        = f.text_field :last_name, required: true,class: "form-control"
+    - if show_email == true  
+      .form-group
+        = f.label :email, class: 'col-sm-5 control-label'
+        .col-sm-5
+          = f.text_field :email, required: true,class: "form-control"
+    .form-group
+      = f.label :gender, "What is your gender?", class: "col-sm-5 control-label"
+      .col-sm-7
+        .button-group{data: {toggle: "buttons"}}
+          %label.btn.btn-default{ class: "#{@user.gender == 'Male' ?  'active' : ''}"}
+            = f.radio_button :gender, "Male"
+            Male
+          %label.btn.btn-default{ class: "#{@user.gender == 'Female' ? 'active' : ''}"}
+            = f.radio_button :gender, "Female"
+            Female
+          %label.btn.btn-default{ class: "#{@user.gender == 'No Response' ? 'active' : ''}"}
+            = f.radio_button :gender, "No Response"
+            No Response
+  .col-sm-6
+    .form-group
+      = f.label :street_address, class: 'col-sm-4 control-label'
+      .col-sm-5
+        = f.text_field :street_address, required: true, class: "form-control"
+    .form-group
+      = f.label :zip_code, required: true, class: 'col-sm-4 control-label'
+      .col-sm-5
+        = f.text_field :zip, class: "form-control"
+    .form-group
+      = f.label :phone_number, class: 'col-sm-4 control-label'
+      .col-sm-5
+        = f.text_field :normal_phone, class: "form-control"

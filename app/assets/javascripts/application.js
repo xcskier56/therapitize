@@ -12,3 +12,29 @@
 //
 //= require jquery_ujs
 //= require_tree ./application
+
+
+// =================================================
+//                  Settings
+// =================================================
+
+$("#student_start_date").datepicker({
+
+});
+
+$("#student_end_date").datepicker({
+
+});
+
+
+// =================================================
+//                Welcome Pages
+// =================================================
+
+$('#welcome1_submit').on('click', function () {
+  $('#welcome_edit_account').submit();
+});
+
+$('#welcome2_submit').on('click', function () {
+  $('#welcome_edit_prefs').submit();
+});

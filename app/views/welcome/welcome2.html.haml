@@ -1,0 +1,19 @@
+.container
+  %center
+    %h1 
+      Welcome
+      = @user.name
+      !
+  %h4 We use these questions to help match you the best we can
+  %hr
+  = form_for @user.preferences, html: {class: 'form-horizontal', id: 'welcome_edit_prefs'}, remote: true do |f|
+    - if @user.user_type == "Student"
+      = render partial: 'users/student_prefs', locals: {user: @user, f: f}
+    - else
+      = render partial: 'users/super_prefs', locals: {user: @user, f: f}
+    .row
+      .col-sm-12
+        %center
+          = link_to 'FINISH', @user, class: 'btn btn-lg btn-primary', id: 'welcome2_submit'
+    .row
+      %br

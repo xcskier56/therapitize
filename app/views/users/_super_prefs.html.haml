@@ -1,0 +1,85 @@
+.row  
+  .col-sm-5
+    .form-group
+      = f.label :favorite_theorist, "Which theorist would you most like to invite out for coffee?"
+      .button-group.vertical-buttons{data: {toggle: "buttons"}}
+        %label.btn.btn-default{ class: "#{@user.preferences.favorite_theorist == "Sigmund Freud" ? 'active' : ''}"}
+          = f.radio_button :favorite_theorist, "Sigmund Freud"
+          Sigmund Freud
+        %label.btn.btn-default{ class: "#{@user.preferences.favorite_theorist == "Virginia Satir" ? 'active' : ''}"}
+          = f.radio_button :favorite_theorist, "Virginia Satir"
+          Virginia Satir
+        %label.btn.btn-default{ class: "#{@user.preferences.favorite_theorist == "Rollo May" ? 'active' : ''}"}
+          = f.radio_button :favorite_theorist, "Rollo May"
+          Rollo May
+        %label.btn.btn-default{ class: "#{@user.preferences.favorite_theorist == "Ester Perel" ? 'active' : ''}"}
+          = f.radio_button :favorite_theorist, "Ester Perel"
+          Ester Perel
+        %label.btn.btn-default{ class: "#{@user.preferences.favorite_theorist == "Carl Rogers" ? 'active' : ''}"}
+          = f.radio_button :favorite_theorist, "Carl Rogers"
+          Carl Rogers
+        %label.btn.btn-default{ class: "#{@user.preferences.favorite_theorist == "Other" ? 'active' : ''}"}
+          = f.radio_button :favorite_theorist, "Other"
+          Other
+  .col-sm-5.col-sm-offset-1
+    .form-group  
+      = label_tag :certificates, "Which of the following credentials do you have?"
+      .row
+        .col-sm-3.checkbox
+          = f.label :lsw do
+            = f.check_box :lsw
+            LSW
+        .col-sm-3.checkbox
+          = f.label :msw do
+            = f.check_box :msw
+            MSW
+        .col-sm-3.checkbox
+          = f.label :licsw do
+            = f.check_box :licsw
+            LICSW
+      .row
+        .col-sm-3.checkbox
+          = f.label :lmft do  
+            = f.check_box :lmft
+            LMFT
+        .col-sm-3.checkbox
+          = f.label :lpcc do
+            = f.check_box :lpcc
+            LPCC
+        .col-sm-3.checkbox
+          = f.label :lp do  
+            = f.check_box :lp
+            LP
+.row
+  .col-sm-5
+    .form-group
+      = f.label :group_rate, "What is the hourly rate you bill at for GROUP supervision?"
+      .input-group
+        %span.input-group-addon $
+        = f.text_field :group_rate, class: "form-control"
+  .col-sm-5.col-sm-offset-1
+    .form-group
+      = f.label :hourly_rate, "What is the hourly rate you bill at for supervision?"
+      .input-group
+        %span.input-group-addon $
+        = f.text_field :hourly_rate, class: "form-control"
+.row
+  .col-sm-5
+    .form-group
+      = f.label :license_number, "What is your license number?"
+      = f.text_field :license_number, required: true,class: "form-control"
+  .col-sm-5.col-sm-offset-1
+    .form-group
+      = f.label :years_practicing, "How many years have you been practicing?"
+      = f.text_field :years_practicing, required: true,class: "form-control"
+.row
+  .col-sm-5
+    .form-group
+      = f.label :current_candidates, "How many candidates are you currently supervising?"
+      = f.text_field :current_candidates, required: true,class: "form-control"
+  .col-sm-5.col-sm-offset-1
+    .form-group
+      = f.label :max_candidates, "How many candidates can you supervise at one time?"
+      = f.text_field :max_candidates, required: true,class: "form-control"
+
+
